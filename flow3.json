@@ -1,0 +1,256 @@
+[
+    {
+        "id": "48d24df90ff61491",
+        "type": "tab",
+        "label": "Flow 3.",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b98724e870554110",
+        "type": "inject",
+        "z": "48d24df90ff61491",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 90,
+        "y": 100,
+        "wires": [
+            [
+                "428e7ceab81e8820"
+            ]
+        ]
+    },
+    {
+        "id": "f9aecfd2a05c7dcd",
+        "type": "inject",
+        "z": "48d24df90ff61491",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "Etiqueta 1",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 110,
+        "y": 160,
+        "wires": [
+            [
+                "79790b03835428bc",
+                "b67e2f97fa81302b"
+            ]
+        ]
+    },
+    {
+        "id": "3364dfdb78031469",
+        "type": "inject",
+        "z": "48d24df90ff61491",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "Etiqueta 2",
+        "payload": "5",
+        "payloadType": "num",
+        "x": 110,
+        "y": 220,
+        "wires": [
+            [
+                "79790b03835428bc",
+                "b67e2f97fa81302b"
+            ]
+        ]
+    },
+    {
+        "id": "655789a7c4cf3d38",
+        "type": "inject",
+        "z": "48d24df90ff61491",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "10",
+        "payloadType": "num",
+        "x": 90,
+        "y": 280,
+        "wires": [
+            [
+                "79790b03835428bc",
+                "b67e2f97fa81302b"
+            ]
+        ]
+    },
+    {
+        "id": "428e7ceab81e8820",
+        "type": "ui_text",
+        "z": "48d24df90ff61491",
+        "group": "8d57cae10fd685a3",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Texto de prueba",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 500,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "b67e2f97fa81302b",
+        "type": "ui_chart",
+        "z": "48d24df90ff61491",
+        "name": "",
+        "group": "214961642327eff3",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "{{msg.topic}}",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 470,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "79790b03835428bc",
+        "type": "ui_gauge",
+        "z": "48d24df90ff61491",
+        "name": "",
+        "group": "185ea5890644f62c",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "{{msg.topic}}",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 470,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "8d57cae10fd685a3",
+        "type": "ui_group",
+        "name": "Tercer Flow",
+        "tab": "06d3010c15b8823c",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "214961642327eff3",
+        "type": "ui_group",
+        "z": "48d24df90ff61491",
+        "name": "Grafica de ejes",
+        "tab": "06d3010c15b8823c",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "185ea5890644f62c",
+        "type": "ui_group",
+        "z": "48d24df90ff61491",
+        "name": "Grafica de pluma",
+        "tab": "06d3010c15b8823c",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "06d3010c15b8823c",
+        "type": "ui_tab",
+        "name": "Hora - Flow 3",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    }
+]
